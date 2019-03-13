@@ -70,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
     private void disp(){
         WifiManager wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         int rssi = wifiManager.getConnectionInfo().getRssi();
-        int level = WifiManager.calculateSignalLevel(rssi,5);
+        int level = WifiManager.calculateSignalLevel(rssi,4);
         String ssid = wifiManager.getConnectionInfo().getSSID();
         String MacAddr = wifiManager.getConnectionInfo().getMacAddress();
 
-        st.setText("\t\tSignal Strength of "+ ssid+"\n\n\t\tMac Address = "+ MacAddr+"\n\n\t\tRSSI = "+ rssi + " dbm \n\n\t\tLevel = "+ level + " out of 5");
+        st.setText("\t\tSSID of Wifi Network joined: "+ ssid+"\n\n\t\tMac Address = "+ MacAddr+"\n\n\t\tSignal Strength = "+ level + " out of 4");
     }
 
     //Store in a file
